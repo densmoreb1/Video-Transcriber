@@ -8,6 +8,11 @@ import shutil
 
 class Transcriber:
     def __init__(self, file_name) -> None:
+        """
+        The init calls the other functions in the class.
+        It takes in the file path and transcribes audio.
+        It creates a directory for the class to work in which is audio-chunks which is replaced everytime the function is run.
+        """
         self.file_name = file_name
         path = os.path.abspath(self.file_name)
         self.transcribe(path)
@@ -51,3 +56,4 @@ class Transcriber:
         file = open('transcription.txt', 'w')
         file.write(self.whole_text)
         file.close()
+
