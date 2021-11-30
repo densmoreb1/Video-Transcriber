@@ -5,5 +5,6 @@ from transciber import Transcriber
 downloader = Downloader()
 file_name = downloader.get_file_name()
 
-# takes in the file name and transcribes into the transcription file
-transcriber = Transcriber(file_name)
+if file_name is not None:
+    # takes in the file name and transcribes into the transcription file
+    transcriber = Transcriber(file_name)

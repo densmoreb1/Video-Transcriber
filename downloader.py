@@ -6,7 +6,7 @@ import shutil
 
 
 class Downloader:
-    def __init__(self) -> None:
+    def __init__(self):
         """
         The init function runs when the instance of the class in created.
         It will ask the user for a link to a YouTube video, download it, and convert it to the proper format.
@@ -34,5 +34,8 @@ class Downloader:
         subprocess.call(['ffmpeg', '-i', self.mp4_file, self.mp4_file + '.wav'])
 
     def get_file_name(self):
-        return self.mp4_file + '.wav'
+        if self.mp4_file is not None:
+            return self.mp4_file + '.wav'
+        else:
+            return self.mp4_file
 

@@ -4,10 +4,11 @@ from pydub.silence import split_on_silence
 import speech_recognition as sr
 import os
 import shutil
+import webbrowser
 
 
 class Transcriber:
-    def __init__(self, file_name) -> None:
+    def __init__(self, file_name):
         """
         The init calls the other functions in the class.
         It takes in the file path and transcribes audio.
@@ -56,4 +57,5 @@ class Transcriber:
         file = open('transcription.txt', 'w')
         file.write(self.whole_text)
         file.close()
+        # webbrowser.open(file)
 
